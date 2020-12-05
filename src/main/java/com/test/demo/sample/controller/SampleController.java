@@ -3,14 +3,16 @@ package com.test.demo.sample.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.test.demo.god.bo.test.service.TestService;
+import com.test.demo.god.bo.test.vo.TestVo;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-// @RestController
 public class SampleController {
     
     @GetMapping("/home")
@@ -41,6 +43,19 @@ public class SampleController {
         testList.add("d");
 
         mav.addObject("list", testList);
+        return mav;
+    }
+
+    @Autowired
+    TestService testService;
+
+    @GetMapping("/voTest")
+    public ModelAndView voTest() throws Exception {
+        ModelAndView mav = new ModelAndView("voTest");
+
+        List<TestVo> testList = testService.selectTestG();
+        mav.addObject("list", testList);
+
         return mav;
     }
 }
