@@ -1,0 +1,3 @@
+ERROR 20-12-12 16:13:01[http-nio-8080-exec-6] [TestService:27] - ERROR Level 테스트
+ERROR 20-12-12 16:22:05[http-nio-8080-exec-1] [TestService:27] - path:./src/main/logs/local ERROR Level 테스트
+ERROR 20-12-12 16:22:09[http-nio-8080-exec-2] [TestService:27] - path:./src/main/logs/local ERROR Level 테스트
